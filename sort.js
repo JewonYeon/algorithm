@@ -13,3 +13,20 @@ function sort_bubble(array) {
   return array;
 };
 
+
+function selection_sort(array) {
+  const length = array.length;
+  for (let i = 0; i < length - 1; i++) {
+    let min_index = i;
+
+    for (let j = i + 1; j < length; j++) {
+      if (array[j] < array[min_index]) {
+        min_index = j;
+      }
+    }
+
+    [array[i], array[min_index]] = [array[min_index], array[i]];
+  }
+
+  return array;
+}
