@@ -30,3 +30,29 @@ function selection_sort(array) {
 
   return array;
 }
+
+function insertion_sort(array) {
+  for (let i = 0; i < array.length; i++) {
+    let cur = array[i];
+    let left = i - 1;
+
+    while(left >= 0 && array[left] > cur) {
+      array[left + 1] = array[left];
+      left--;
+    }
+    array[left + 1] = cur;
+  }
+
+  return array;
+
+  // for (let i = 1; i < array.length; i++) {
+  //   for (let j = i - 1; j >= 0; j--) {
+  //     if (array[j + 1] < array[j]) {
+  //       [array[j + 1], array[j]] = [array[j], array[j + 1]];
+  //     } else {
+  //       break;
+  //     }
+  //   }
+  // }
+  // return array;
+}
